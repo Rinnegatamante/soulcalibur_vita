@@ -154,9 +154,29 @@ jobject getPubLink(jmethodID id, va_list args) {
 }
 
 jobject getLocale(jmethodID id, va_list args) {
-	JavaDynArray * ret = jda_alloc(3, FIELD_TYPE_BYTE);
+	JavaDynArray * ret = jda_alloc(2, FIELD_TYPE_BYTE);
     char *arr = ret->array;
-	strcpy(arr, "en");
+	
+	int res;
+	sceAppUtilSystemParamGetInt(SCE_SYSTEM_PARAM_ID_LANG, &res);
+	switch (res) {
+	case SCE_SYSTEM_PARAM_LANG_JAPANESE:
+		strcpy(arr, "ja");
+		break;
+	case SCE_SYSTEM_PARAM_LANG_SPANISH:
+		strcpy(arr, "es");
+		break;
+	case SCE_SYSTEM_PARAM_LANG_FRENCH:
+		strcpy(arr, "fr");
+		break;
+	case SCE_SYSTEM_PARAM_LANG_GERMAN:
+		strcpy(arr, "de");
+		break;
+	default:
+		strcpy(arr, "en");
+		break;
+	}
+	
     return (jobject)ret;
 }
 

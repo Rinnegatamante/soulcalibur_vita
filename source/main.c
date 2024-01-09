@@ -34,6 +34,12 @@ int sceLibcHeapSize = 24 * 1024 * 1024;
 so_module so_mod;
 
 int main() {
+	SceAppUtilInitParam appUtilParam;
+	SceAppUtilBootParam appUtilBootParam;
+	memset(&appUtilParam, 0, sizeof(SceAppUtilInitParam));
+	memset(&appUtilBootParam, 0, sizeof(SceAppUtilBootParam));
+	sceAppUtilInit(&appUtilParam, &appUtilBootParam);
+	
 	soloader_init_all();
 
 	int (*ANativeActivity_onCreate)(ANativeActivity *activity, void *savedState,
