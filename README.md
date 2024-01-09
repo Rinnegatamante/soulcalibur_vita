@@ -13,9 +13,11 @@ By doing so, it's basically as if we emulate a minimalist Android environment in
 
 - Initial release.
 
-## Note
+## Notes and Tips
 
 - The port has been tested with v.1.0.15 of the game.
+- Some stages (eg. Water Labyrinth) might cause framedrops. Please report any of these problematics so that a fix can be find for specific stages.
+- When first launching the game, it is recommended to go into Options and lower BGM and SE volumes to 8 or lower. Not doing so will cause SFX glitching out due to too high volume playback.
 
 ## Setup Instructions (For End Users)
 
@@ -39,7 +41,7 @@ In order to properly install the game, you'll have to follow these steps precise
 - Select all the files and right-click them, then click on `Extract` and extract all the files in `ux0:data/soulcalibur`.
 - Download [xdelta UI](https://www.romhacking.net/utilities/598/) and extract the zip content in `ux0:data/soulcalibur`.
 - Download the `shader.xdelta` patch from Release page and apply it, using `xdelta UI` to `ux0:data/soulcalibur/shader.dat` and replace original file with the patched one.
-- **Optional**: For trophies to be unlockable, install [NoTrpDRM](https://github.com/Rinnegatamante/NoTrpDrm).
+- **Optional**: For trophies to be unlockable, install [NoTrpDrm](https://github.com/Rinnegatamante/NoTrpDrm).
 
 ## Build Instructions (For Developers)
 
@@ -71,7 +73,7 @@ Additionally, you'll need these libraries to be compiled as well with `-mfloat-a
 - [vitaGL](https://github.com/Rinnegatamante/vitaGL)
 
   - ````bash
-    make SOFTFP_ABI=1 NO_DEBUG=1 HAVE_GLSL_SUPPORT=1 PHYCONT_ON_DEMAND=1 HAVE_UNFLIPPED_FBOS=1 install
+    make SOFTFP_ABI=1 NO_DEBUG=1 HAVE_GLSL_SUPPORT=1 install
     ````
 
 After all these requirements are met, you can compile the loader with the following commands:
@@ -85,4 +87,4 @@ cmake .. && make
 
 - TheFloW for the original .so loader.
 - gl33ntwine for the awesome Android subsystem reimplementation and [FalsoJNI](https://github.com/v-atamanenko/FalsoJNI).
-- BrandonHeat8 for the Livearea assets.
+- BrandonHeat8 for the Livearea assets and for testing the homebrew.
