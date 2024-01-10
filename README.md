@@ -88,5 +88,5 @@ cmake .. && make
 ## Credits
 
 - TheFloW for the original .so loader.
-- gl33ntwine for the awesome Android subsystem reimplementation and [FalsoJNI](https://github.com/v-atamanenko/FalsoJNI).
+- gl33ntwine for the awesome Android subsystem reimplementation [FalsoNDK](https://github.com/v-atamanenko/FalsoNDK) and [FalsoJNI](https://github.com/v-atamanenko/FalsoJNI).
 - BrandonHeat8 for the Livearea assets and for testing the homebrew.
