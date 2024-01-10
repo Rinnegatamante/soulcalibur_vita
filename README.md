@@ -51,8 +51,6 @@ In order to build the loader, you'll need a [vitasdk](https://github.com/vitasdk
 You can find a precompiled version here: https://github.com/vitasdk/buildscripts/actions/runs/1102643776.  
 Additionally, you'll need these libraries to be compiled as well with `-mfloat-abi=softfp` added to their CFLAGS:
 
-- [SoLoud](https://github.com/vitasdk/packages/blob/master/soloud/VITABUILD)
-
 - [libmathneon](https://github.com/Rinnegatamante/math-neon)
 
   - ```bash
@@ -88,5 +86,5 @@ cmake .. && make
 ## Credits
 
 - TheFloW for the original .so loader.
-- gl33ntwine for the awesome Android subsystem reimplementation and [FalsoJNI](https://github.com/v-atamanenko/FalsoJNI).
+- gl33ntwine for the awesome Android subsystem reimplementation [FalsoNDK](https://github.com/v-atamanenko/FalsoNDK) and [FalsoJNI](https://github.com/v-atamanenko/FalsoJNI).
 - BrandonHeat8 for the Livearea assets and for testing the homebrew.
