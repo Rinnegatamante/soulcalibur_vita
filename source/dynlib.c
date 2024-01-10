@@ -990,6 +990,7 @@ so_default_dynlib default_dynlib[] = {
 
 
 		// zlib
+		{ "crc32", (uintptr_t)&crc32 },
 		{ "gzopen", (uintptr_t)&gzopen },
 		{ "gzgets", (uintptr_t)&gzgets },
 		{ "gzclose", (uintptr_t)&gzclose },

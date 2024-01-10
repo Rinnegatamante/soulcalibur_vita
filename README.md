@@ -16,8 +16,10 @@ By doing so, it's basically as if we emulate a minimalist Android environment in
 ## Notes and Tips
 
 - The port has been tested with v.1.0.15 of the game.
-- Some stages (eg. Water Labyrinth) might cause framedrops. Please report any of these problematics so that a fix can be find for specific stages.
+- Some stages (eg. Water Labyrinth and the final Arcade fight with Inferno) might cause framedrops. Please report any of these problematics so that a fix can be find for specific stages.
 - When first launching the game, it is recommended to go into Options and lower BGM and SE volumes to 8 or lower. Not doing so will cause SFX glitching out due to too high volume playback.
+- Some stages (Takamatsu Castle and Money Pit) got simplified in background elements to reduce framerate tanking.
+- Stages that aren't unlockable in Android version due to lack of Mission Battle mode got restored and will be available to play from the beginning, including alternate stages.
 
 ## Setup Instructions (For End Users)
 

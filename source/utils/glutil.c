@@ -50,9 +50,7 @@ void gl_preload() {
         fatal_error("Error: libshacccg.suprx is not installed. Google \"ShaRKBR33D\" for quick installation.");
     }
 
-	vglSetupRuntimeShaderCompiler(SHARK_OPT_UNSAFE, SHARK_ENABLE, SHARK_ENABLE, SHARK_ENABLE);
-	vglUseLowPrecision(GL_TRUE);
-    vglSetSemanticBindingMode(VGL_MODE_POSTPONED);
+	vglSetSemanticBindingMode(VGL_MODE_POSTPONED);
 	vglSetParamBufferSize(4 * 1024 * 1024);
 }
 
