@@ -27,8 +27,6 @@
 #define GXP_PATH "app0:shaders"
 
 void warning(const char *msg) {
-	gl_init();
-	
 	SceMsgDialogUserMessageParam msg_param;
 	sceClibMemset(&msg_param, 0, sizeof(SceMsgDialogUserMessageParam));
 	msg_param.buttonType = SCE_MSG_DIALOG_BUTTON_TYPE_OK;
