@@ -105,9 +105,9 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 					  openal
 					  sndfile
 					  vorbisfile
+					  vorbis
 					  ogg
 					  vorbisenc
-					  vorbis
 					  FLAC
 					  vitaGL
 					  vitashark
