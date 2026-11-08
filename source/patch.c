@@ -87,21 +87,21 @@ void so_patch(void) {
 	
 	// Kill "PertBoss" spawning in Money Pit. No idea what this is but seems to help with framerate tanking
 	uint16_t instr16 = 0xd0c9; // beq #0xffffff96
-	kuKernelCpuUnrestrictedMemcpy((void *)(so_mod.text_base + 0x10eb7c), &instr16, 2);
+	sceClibMemcpy((void *)(so_mod.text_base + 0x10eb7c), &instr16, 2);
 	
 	// Killing S/N-Fire elements in Money Pit. Seems to help framerate with little changes to the actual stage
 	uint32_t instr32 = 0xaf41f43f;
-	kuKernelCpuUnrestrictedMemcpy((void *)(so_mod.text_base + 0x10e55e), &instr32, 4);
+	sceClibMemcpy((void *)(so_mod.text_base + 0x10e55e), &instr32, 4);
 	instr32 = 0xaf35f43f;
-	kuKernelCpuUnrestrictedMemcpy((void *)(so_mod.text_base + 0x10e702), &instr32, 4);
+	sceClibMemcpy((void *)(so_mod.text_base + 0x10e702), &instr32, 4);
 	instr32 = 0xaf3df43f;
-	kuKernelCpuUnrestrictedMemcpy((void *)(so_mod.text_base + 0x10e90e), &instr32, 4);
+	sceClibMemcpy((void *)(so_mod.text_base + 0x10e90e), &instr32, 4);
 	instr32 = 0xaf3ff43f;
-	kuKernelCpuUnrestrictedMemcpy((void *)(so_mod.text_base + 0x10eaf6), &instr32, 4);
+	sceClibMemcpy((void *)(so_mod.text_base + 0x10eaf6), &instr32, 4);
 	instr32 = 0xaf4ef47f;
-	kuKernelCpuUnrestrictedMemcpy((void *)(so_mod.text_base + 0x10ed64), &instr32, 4);
+	sceClibMemcpy((void *)(so_mod.text_base + 0x10ed64), &instr32, 4);
 	instr32 = 0xaf54f47f;
-	kuKernelCpuUnrestrictedMemcpy((void *)(so_mod.text_base + 0x10ef6c), &instr32, 4);
+	sceClibMemcpy((void *)(so_mod.text_base + 0x10ef6c), &instr32, 4);
 	
 	// Paralyze mice in Money Pit to save on framerate taxing
 	hook_addr((uintptr_t)so_symbol(&so_mod, "_Z11I_ObjMouse0v"), (uintptr_t)&ret0);
