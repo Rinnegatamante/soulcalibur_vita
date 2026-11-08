@@ -9,9 +9,14 @@ set(CMAKE_TOOLCHAIN_FILE "$ENV{VITASDK}/share/vita.toolchain.cmake"
 	CACHE PATH "Toolchain file")
 
 project(soulcalibur C CXX)
+set(CMAKE_C_STANDARD 17)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+set(CMAKE_C_EXTENSIONS ON)
 
 include("${VITASDK}/share/vita.cmake" REQUIRED)
-
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(sndfile REQUIRED IMPORTED_TARGET sndfile)
+pkg_check_modules(vorbisfile REQUIRED IMPORTED_TARGET vorbisfile)
 # Vita application configuration
 set(VITA_APP_NAME "SoulCalibur")
 set(VITA_TITLEID "SOUL00001")
@@ -98,7 +103,11 @@ target_include_directories(${CMAKE_PROJECT_NAME}
 						   PUBLIC ${CMAKE_SOURCE_DIR}/source
 						   )
 
+
 target_link_libraries(${CMAKE_PROJECT_NAME}
+                      -Wl,--start-group
+                      PkgConfig::sndfile
+                      PkgConfig::vorbisfile
 					  -Wl,--whole-archive pthread -Wl,--no-whole-archive
 					  stdc++
 					  OpenSLES
@@ -138,6 +147,7 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 					  ScePower_stub
 					  SceTouch_stub
 					  SceVshBridge_stub
+                      -Wl,--end-group
 					  )
 
 vita_create_self(eboot.bin ${CMAKE_PROJECT_NAME} UNSAFE NOASLR)

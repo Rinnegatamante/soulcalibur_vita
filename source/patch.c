@@ -89,7 +89,7 @@ void so_patch(void) {
 	achieve_hook = hook_addr((uintptr_t)so_symbol(&so_mod, "_ZN7Achieve10setAchieveEii"), (uintptr_t)&setAchieve);
 	
 	// Disable anything stage related for Takamatsu Castle to not tank framerate
-	I_HeapKaraLoop = so_symbol(&so_mod, "I_HeapKaraLoop");
+	I_HeapKaraLoop = (uint32_t *)so_symbol(&so_mod, "I_HeapKaraLoop");
 	takamatsu_hook = hook_addr((uintptr_t)so_symbol(&so_mod, "_Z17I_TakamatsuSummerv"), (uintptr_t)&TakamatsuSummer);
 	takamatsu2_hook = hook_addr((uintptr_t)so_symbol(&so_mod, "_Z17I_TakamatsuWinterv"), (uintptr_t)&TakamatsuWinter);
 	
