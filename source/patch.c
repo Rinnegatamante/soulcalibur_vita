@@ -76,7 +76,15 @@ int TakamatsuWinter() {
 	return SO_CONTINUE(int, takamatsu2_hook);
 }
 
+static void disable_framepacer(void) {
+	// Disables the framepacer that makes framerate drop straight to 2 interval v-sync periods when falling below 16.6ms in a frame
+    uintptr_t game_main = (uintptr_t)so_symbol(&so_mod, "_ZN7GameMgr4mainEv");
+    uintptr_t instruction = (game_main & ~(uintptr_t)1) + 0x1b8;
+    const uint16_t target = 0x2301;
+    sceClibMemcpy((void *)instruction, &target, sizeof(target));
+}
 void so_patch(void) {
+    disable_framepacer();
 	// Trophies support
 	achieve_hook = hook_addr((uintptr_t)so_symbol(&so_mod, "_ZN7Achieve10setAchieveEii"), (uintptr_t)&setAchieve);
 	
