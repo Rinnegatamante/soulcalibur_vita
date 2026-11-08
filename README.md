@@ -9,7 +9,18 @@ By doing so, it's basically as if we emulate a minimalist Android environment in
 
 ## Changelog
 
-### v1.0
+### v.1.2
+
+- Updated to latest vitaGL usage.
+- Disabled the internal game framepacer (Now when the game drops below 60 fps frame budget, it won't lock at 30 fps but instead keep running at as high as possible FPS).
+- Enabled scratch memory and draw speedhack flags in vitaGL (This brings a boost up to 250% in performances, smoothening the pre-fight screens and making the game almost locked 60 FPS).
+
+### v.1.1
+
+- Updated to latest vitaGL usage.
+- Greatly improved performances thanks to circular vertex pool usage in vitaGL.
+
+### v.1.0
 
 - Initial release.
 
